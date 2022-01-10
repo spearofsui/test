@@ -1,9 +1,26 @@
-火线 *
-
-无耻之徒*
-
-风骚律师*
-
-黑道家族
-
-勇闯夺命岛*
+package second;
+public class WaterFlower {
+    static int sxh(int n) {
+    	// n是三位整数，判断n是否位水仙花数，如果是返回1，否则返回0
+    			//水仙花数等于其个位数的立方加上十位数的立方，加上百位数的立方。
+    			int a,b,c;
+    			a=n%10;//得到n的个位
+    			b=n%100/10;//得到n的十位
+    			c=n/100;//得到n的百位
+    			if(n==a*a*a+b*b*b+c*c*c)
+    				return 1;
+    			else
+    				return 0;
+    }
+    static void printsxh() {
+    	//输出100到999之间的所有水仙花数
+    	int i;
+    	for(i=100;i<=999;i++)
+    		if(sxh(i)==1)//这个1返回的是判断出来是水仙花的1.前面判断中的1
+    			System.out.print(i+" ");
+    	System.out.println();
+    }
+	public static void main(String[] args) {
+		printsxh();
+	}
+}
